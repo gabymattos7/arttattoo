@@ -93,34 +93,34 @@ export const Testimonials = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card p-8 rounded-3xl border border-border/50"
+              className="bg-card p-4 rounded-xl border border-border/50"
             >
-              <div className="flex gap-1 mb-6">
+              <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                  <Star key={i} className="w-3 h-3 fill-gold text-gold" />
                 ))}
               </div>
 
-              <p className="text-foreground/90 text-lg leading-relaxed mb-8">
+              <p className="text-foreground/90 text-xs leading-relaxed mb-4 line-clamp-4">
                 "{testimonial.content}"
               </p>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
                 <img
                   src={testimonial.avatar}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-8 h-8 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div className="font-semibold text-foreground text-xs">{testimonial.name}</div>
+                  <div className="text-[10px] text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>

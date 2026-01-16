@@ -107,14 +107,14 @@ export const Artists = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {artists.map((artist, index) => (
             <motion.div
               key={artist.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-card rounded-3xl overflow-hidden border border-border/50 hover:border-gold/50 transition-all duration-300"
+              className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-gold/50 transition-all duration-300"
             >
               <div className="aspect-[4/5] overflow-hidden relative">
                 <img
@@ -123,21 +123,21 @@ export const Artists = () => {
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block bg-gold text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold mb-2">
+                <div className="absolute bottom-2 left-2 right-2">
+                  <span className="inline-block bg-gold text-primary-foreground px-2 py-0.5 rounded-full text-[10px] font-semibold mb-1">
                     {artist.specialty}
                   </span>
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-display font-bold text-foreground mb-1">
+              <div className="p-3">
+                <h3 className="text-sm font-display font-bold text-foreground mb-0.5">
                   {artist.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-3">
+                <p className="text-muted-foreground text-xs mb-2 line-clamp-2">
                   {artist.description}
                 </p>
-                <span className="text-gold text-sm font-medium">
+                <span className="text-gold text-xs font-medium">
                   {artist.experience} de experiência
                 </span>
               </div>
