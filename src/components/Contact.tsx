@@ -5,11 +5,6 @@ import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 const contactInfo = [
   {
-    icon: MapPin,
-    label: "Endereço",
-    value: "Av. Paulista, 1000 - São Paulo, SP",
-  },
-  {
     icon: Phone,
     label: "Telefone",
     value: "(11) 99999-9999",
@@ -24,6 +19,33 @@ const contactInfo = [
     label: "Horário",
     value: "Seg - Sáb: 10h às 20h",
   },
+];
+
+const locations = [
+  { city: "São Paulo", state: "SP", address: "Av. Paulista, 1500" },
+  { city: "Rio de Janeiro", state: "RJ", address: "Av. Atlântica, 2000" },
+  { city: "Brasília", state: "DF", address: "SCS Quadra 7, Bloco A" },
+  { city: "Fortaleza", state: "CE", address: "Av. Beira Mar, 3200" },
+  { city: "Salvador", state: "BA", address: "Av. Tancredo Neves, 1800" },
+  { city: "Belo Horizonte", state: "MG", address: "Av. Afonso Pena, 2500" },
+  { city: "Manaus", state: "AM", address: "Av. Eduardo Ribeiro, 900" },
+  { city: "Curitiba", state: "PR", address: "Rua XV de Novembro, 1200" },
+  { city: "Recife", state: "PE", address: "Av. Boa Viagem, 4500" },
+  { city: "Goiânia", state: "GO", address: "Av. T-63, 1100" },
+  { city: "Porto Alegre", state: "RS", address: "Rua dos Andradas, 800" },
+  { city: "Belém", state: "PA", address: "Av. Presidente Vargas, 650" },
+  { city: "Serra", state: "ES", address: "Av. Civit, 500" },
+  { city: "Campo Grande", state: "MS", address: "Av. Afonso Pena, 3200" },
+  { city: "Cuiabá", state: "MT", address: "Av. Historiador Rubens de Mendonça, 1500" },
+  { city: "Joinville", state: "SC", address: "Rua do Príncipe, 700" },
+  { city: "Natal", state: "RN", address: "Av. Engenheiro Roberto Freire, 2200" },
+  { city: "João Pessoa", state: "PB", address: "Av. Epitácio Pessoa, 1800" },
+  { city: "Maceió", state: "AL", address: "Av. Dr. Antônio Gouveia, 400" },
+  { city: "Aracaju", state: "SE", address: "Av. Beira Mar, 1500" },
+  { city: "Teresina", state: "PI", address: "Av. Frei Serafim, 2000" },
+  { city: "São Luís", state: "MA", address: "Av. Litorânea, 1200" },
+  { city: "Palmas", state: "TO", address: "Quadra 104 Sul, Av. JK" },
+  { city: "Porto Velho", state: "RO", address: "Av. Sete de Setembro, 1100" },
 ];
 
 export const Contact = () => {
@@ -98,6 +120,21 @@ export const Contact = () => {
                   </svg>
                 </a>
               ))}
+            </div>
+
+            <div className="mt-10">
+              <h4 className="text-lg font-display font-bold text-foreground mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-gold" />
+                Nossas Unidades
+              </h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-64 overflow-y-auto pr-2">
+                {locations.map((loc) => (
+                  <div key={loc.city} className="bg-background/50 border border-border/50 rounded-lg p-3">
+                    <div className="text-sm font-medium text-foreground">{loc.city} ({loc.state})</div>
+                    <div className="text-xs text-muted-foreground">{loc.address}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
