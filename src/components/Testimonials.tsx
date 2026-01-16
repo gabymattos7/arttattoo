@@ -25,6 +25,48 @@ const testimonials = [
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
   },
+  {
+    name: "Carlos Eduardo",
+    role: "Cliente desde 2018",
+    content: "Fiz minha primeira tatuagem aqui e não me arrependo. A equipe é super profissional e me deixou muito tranquilo durante todo o processo.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+  },
+  {
+    name: "Fernanda Lima",
+    role: "Cliente desde 2022",
+    content: "Trabalho de altíssima qualidade! O artista captou perfeitamente a essência do que eu queria. O resultado superou todas as expectativas.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
+  },
+  {
+    name: "Bruno Martins",
+    role: "Cliente desde 2020",
+    content: "Ambiente impecável, equipamentos de primeira e artistas extremamente talentosos. Voltarei com certeza para minha próxima tatuagem!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+  },
+  {
+    name: "Camila Rodrigues",
+    role: "Cliente desde 2021",
+    content: "A melhor experiência que já tive em um estúdio de tatuagem. Desde a consulta inicial até o resultado final, tudo perfeito!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+  },
+  {
+    name: "Lucas Almeida",
+    role: "Cliente desde 2019",
+    content: "Já fiz 5 tatuagens no Art TATTO e todas ficaram incríveis. A atenção aos detalhes e o cuidado com o cliente são incomparáveis.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+  },
+  {
+    name: "Patrícia Souza",
+    role: "Cliente desde 2023",
+    content: "Fiquei nervosa por ser minha primeira tatuagem, mas a equipe me acolheu tão bem que me senti super confortável. Resultado lindo!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop",
+  },
 ];
 
 export const Testimonials = () => {
@@ -51,13 +93,13 @@ export const Testimonials = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-card p-8 rounded-3xl border border-border/50"
             >
               <div className="flex gap-1 mb-6">
