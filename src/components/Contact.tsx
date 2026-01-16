@@ -125,7 +125,7 @@ export const Contact = () => {
             <div className="mt-10">
               <h4 className="text-lg font-display font-bold text-foreground mb-4 flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                Nossas Unidades
+                Atendemos nos Seguintes Estados
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-64 overflow-y-auto pr-2">
                 {locations.map((loc) => (
