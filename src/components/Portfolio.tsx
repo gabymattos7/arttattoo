@@ -127,13 +127,13 @@ export const Portfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-10"
         >
           {styles.map((style) => (
             <button
               key={style}
               onClick={() => setActiveStyle(style)}
-              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
+              className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 ${
                 activeStyle === style
                   ? "bg-gold text-background"
                   : "bg-card text-foreground hover:bg-gold/20 border border-border"
@@ -165,7 +165,7 @@ export const Portfolio = () => {
         {/* Gallery Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (
@@ -176,7 +176,7 @@ export const Portfolio = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer"
                 onClick={() => setSelectedImage(item)}
               >
                 <img
@@ -185,11 +185,11 @@ export const Portfolio = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 bg-gold text-background text-xs font-semibold rounded-full mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="inline-block px-2 py-0.5 bg-gold text-background text-[10px] font-semibold rounded-full mb-1">
                     {item.style}
                   </span>
-                  <p className="text-foreground font-medium">{item.description}</p>
+                  <p className="text-foreground font-medium text-xs">{item.description}</p>
                 </div>
               </motion.div>
             ))}
