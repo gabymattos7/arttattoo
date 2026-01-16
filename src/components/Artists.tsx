@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Users, Instagram } from "lucide-react";
+import { Users } from "lucide-react";
 
 import artistOldschool from "@/assets/artists/artist-oldschool.jpg";
 import artistRealismo from "@/assets/artists/artist-realismo.jpg";
@@ -20,7 +20,6 @@ const artists = [
     description: "Ícones vintage, âncoras, sereias e linhas fortes",
     experience: "12 anos",
     image: artistOldschool,
-    instagram: "@ricardo.oldschool",
   },
   {
     name: "Carolina Mendes",
@@ -28,7 +27,6 @@ const artists = [
     description: "Tatuagens ultrarealistas em preto, cinza e colorido",
     experience: "10 anos",
     image: artistRealismo,
-    instagram: "@carol.realismo",
   },
   {
     name: "Isabela Costa",
@@ -36,7 +34,6 @@ const artists = [
     description: "Designs minimalistas, delicados e precisos",
     experience: "8 anos",
     image: artistFineline,
-    instagram: "@isa.fineline",
   },
   {
     name: "Marcos Rocha",
@@ -44,7 +41,6 @@ const artists = [
     description: "Arte em tinta preta com texturas e formas impactantes",
     experience: "15 anos",
     image: artistBlackwork,
-    instagram: "@marcos.blackwork",
   },
   {
     name: "Felipe Santos",
@@ -52,7 +48,6 @@ const artists = [
     description: "Construído com pontos para detalhes e gradientes únicos",
     experience: "9 anos",
     image: artistDotwork,
-    instagram: "@felipe.dotwork",
   },
   {
     name: "Kenji Tanaka",
@@ -60,7 +55,6 @@ const artists = [
     description: "Arte japonesa: dragões, carpas e flores de cerejeira",
     experience: "14 anos",
     image: artistOriental,
-    instagram: "@kenji.oriental",
   },
   {
     name: "Tiago Amorim",
@@ -68,7 +62,6 @@ const artists = [
     description: "Padrões geométricos de culturas polinésias e indígenas",
     experience: "11 anos",
     image: artistMaori,
-    instagram: "@tiago.maori",
   },
   {
     name: "Lucas Ferreira",
@@ -76,7 +69,6 @@ const artists = [
     description: "Formas, linhas e padrões matemáticos complexos",
     experience: "7 anos",
     image: artistGeometrico,
-    instagram: "@lucas.geometrico",
   },
   {
     name: "Amanda Oliveira",
@@ -84,7 +76,6 @@ const artists = [
     description: "Tatuagens feitas com uma única linha contínua",
     experience: "6 anos",
     image: artistSingleline,
-    instagram: "@amanda.singleline",
   },
 ];
 
@@ -146,18 +137,9 @@ export const Artists = () => {
                 <p className="text-muted-foreground text-sm mb-3">
                   {artist.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-gold text-sm font-medium">
-                    {artist.experience} de experiência
-                  </span>
-                  <a
-                    href="#"
-                    className="flex items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
-                  >
-                    <Instagram className="w-4 h-4" />
-                    <span className="text-sm">{artist.instagram}</span>
-                  </a>
-                </div>
+                <span className="text-gold text-sm font-medium">
+                  {artist.experience} de experiência
+                </span>
               </div>
             </motion.div>
           ))}
