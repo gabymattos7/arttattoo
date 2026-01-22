@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const navLinks = [
   { href: "#portfolio", label: "Portfólio" },
@@ -12,12 +12,33 @@ const navLinks = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const lastScrollY = useRef(0);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
+
+  const { scrollY } = useScroll();
+  
+  // Scale transforms based on scroll direction
+  const scale = useTransform(
+    scrollY,
+    [0, 100, 200],
+    scrollDirection === "down" ? [1, 0.95, 0.92] : [1, 1, 1]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY.current) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      
+      lastScrollY.current = currentScrollY;
+      setScrolled(currentScrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,34 +47,61 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+      style={{ scale: scrollDirection === "down" ? scale : 1 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-background/70 backdrop-blur-xl shadow-lg border-b border-gold/10" 
+          : "bg-transparent backdrop-blur-none"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <motion.div 
+        className="max-w-7xl mx-auto px-6 py-4"
+        animate={{
+          scale: scrollDirection === "down" && scrolled ? 0.98 : 1,
+          y: scrollDirection === "down" && scrolled ? -2 : 0,
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
         <div className="flex items-center justify-between">
-          <a href="/" className="text-2xl font-display font-black tracking-tight text-foreground">
+          <motion.a 
+            href="/" 
+            className="text-2xl font-display font-black tracking-tight text-foreground"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
             Art <span className="text-gold">TATTO</span>
-          </a>
+          </motion.a>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, index) => (
+              <motion.a
                 key={link.href}
                 href={link.href}
-                className="font-medium transition-colors text-foreground/90 hover:text-gold"
+                className="font-medium transition-colors text-foreground/90 hover:text-gold relative"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
                 {link.label}
-              </a>
+                <motion.span 
+                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-gold origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
             ))}
           </div>
 
-          <a
+          <motion.a
             href="#agendar"
             className="hidden md:inline-flex bg-gold text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-gold-hover transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Agendar Consulta
-          </a>
+          </motion.a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -75,7 +123,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 space-y-4"
+            className="md:hidden mt-4 pb-4 space-y-4 bg-background/80 backdrop-blur-xl rounded-xl p-4"
           >
             {navLinks.map((link) => (
               <a
@@ -96,7 +144,7 @@ export const Navbar = () => {
             </a>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </motion.nav>
   );
 };
