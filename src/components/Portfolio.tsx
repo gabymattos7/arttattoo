@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import oldSchool1 from "@/assets/portfolio/old-school-1.jpg";
 import oldSchool2 from "@/assets/portfolio/old-school-2.jpg";
 import realismo1 from "@/assets/portfolio/realismo-1.jpg";
-import realismo2 from "@/assets/portfolio/realismo-2.jpg";
 import fineLine1 from "@/assets/portfolio/fine-line-1.jpg";
 import fineLine2 from "@/assets/portfolio/fine-line-2.jpg";
 import blackwork1 from "@/assets/portfolio/blackwork-1.jpg";
@@ -16,7 +15,6 @@ import oriental1 from "@/assets/portfolio/oriental-1.jpg";
 import oriental2 from "@/assets/portfolio/oriental-2.jpg";
 import maori1 from "@/assets/portfolio/maori-1.jpg";
 import maori2 from "@/assets/portfolio/maori-2.jpg";
-import geometrico1 from "@/assets/portfolio/geometrico-1.jpg";
 import geometrico2 from "@/assets/portfolio/geometrico-2.jpg";
 import singleLine1 from "@/assets/portfolio/single-line-1.jpg";
 import singleLine2 from "@/assets/portfolio/single-line-2.jpg";
@@ -42,11 +40,6 @@ const portfolioItems: PortfolioItem[] = [{
   image: realismo1,
   style: "Realismo",
   description: "Retrato realista em preto e cinza"
-}, {
-  id: 4,
-  image: realismo2,
-  style: "Realismo",
-  description: "Leão hiperrealista colorido"
 }, {
   id: 5,
   image: fineLine1,
@@ -97,11 +90,6 @@ const portfolioItems: PortfolioItem[] = [{
   image: maori2,
   style: "Maori",
   description: "Padrões polinésios no ombro"
-}, {
-  id: 15,
-  image: geometrico1,
-  style: "Geométrico",
-  description: "Lobo geométrico"
 }, {
   id: 16,
   image: geometrico2,
