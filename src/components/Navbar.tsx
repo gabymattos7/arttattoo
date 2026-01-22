@@ -49,13 +49,13 @@ export const Navbar = () => {
       transition={{ duration: 0.6 }}
       style={{
         scale: scrollDirection === "down" ? scale : 1,
-        backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "blur(12px) saturate(120%)",
-        WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "blur(12px) saturate(120%)",
+        backdropFilter: scrolled ? "blur(80px) saturate(180%)" : "blur(40px) saturate(150%)",
+        WebkitBackdropFilter: scrolled ? "blur(80px) saturate(180%)" : "blur(40px) saturate(150%)",
       }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-4 left-4 right-4 z-50 transition-all duration-500 rounded-2xl ${
         scrolled 
-          ? "bg-white/80 dark:bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-b border-white/20" 
-          : "bg-white/30 dark:bg-white/5"
+          ? "bg-gray-200/70 dark:bg-gray-800/70 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-300/30" 
+          : "bg-gray-100/50 dark:bg-gray-900/40 border border-gray-200/20"
       }`}
     >
       <motion.div 
