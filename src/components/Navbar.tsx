@@ -47,11 +47,15 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      style={{ scale: scrollDirection === "down" ? scale : 1 }}
+      style={{
+        scale: scrollDirection === "down" ? scale : 1,
+        backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "blur(12px) saturate(120%)",
+        WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "blur(12px) saturate(120%)",
+      }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-background/70 backdrop-blur-xl shadow-lg border-b border-gold/10" 
-          : "bg-transparent backdrop-blur-none"
+          ? "bg-white/80 dark:bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-b border-white/20" 
+          : "bg-white/30 dark:bg-white/5"
       }`}
     >
       <motion.div 
@@ -123,7 +127,11 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 space-y-4 bg-background/80 backdrop-blur-xl rounded-xl p-4"
+            className="md:hidden mt-4 pb-4 space-y-4 bg-white/90 dark:bg-white/10 backdrop-blur-2xl rounded-xl p-4 border border-white/30 shadow-lg"
+            style={{
+              backdropFilter: "blur(24px) saturate(180%)",
+              WebkitBackdropFilter: "blur(24px) saturate(180%)",
+            }}
           >
             {navLinks.map((link) => (
               <a
