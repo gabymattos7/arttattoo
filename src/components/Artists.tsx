@@ -84,13 +84,13 @@ export const Artists = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="equipe" className="py-24 md:py-32 bg-background" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="equipe" className="py-12 md:py-16 bg-background" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <Users className="w-5 h-5 text-gold" />
@@ -98,47 +98,47 @@ export const Artists = () => {
               Nossa Equipe
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
             Conheça Nossos Artistas
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
             Uma equipe diversificada de talentos, cada um especialista em seu estilo, 
             prontos para transformar suas ideias em arte permanente.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
           {artists.map((artist, index) => (
             <motion.div
               key={artist.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-card rounded-xl overflow-hidden border border-border/50 hover:border-gold/50 transition-all duration-300"
+              className="group bg-card rounded-lg overflow-hidden border border-border/50 hover:border-gold/50 transition-all duration-300"
             >
-              <div className="aspect-[4/5] overflow-hidden relative">
+              <div className="aspect-square overflow-hidden relative">
                 <img
                   src={artist.image}
                   alt={artist.name}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-                <div className="absolute bottom-2 left-2 right-2">
-                  <span className="inline-block bg-gold text-primary-foreground px-2 py-0.5 rounded-full text-[10px] font-semibold mb-1">
+                <div className="absolute bottom-1 left-1 right-1">
+                  <span className="inline-block bg-gold text-primary-foreground px-1.5 py-0.5 rounded-full text-[8px] font-semibold">
                     {artist.specialty}
                   </span>
                 </div>
               </div>
               
-              <div className="p-3">
-                <h3 className="text-sm font-display font-bold text-foreground mb-0.5">
+              <div className="p-2">
+                <h3 className="text-xs font-display font-bold text-foreground mb-0.5 truncate">
                   {artist.name}
                 </h3>
-                <p className="text-muted-foreground text-xs mb-2 line-clamp-2">
+                <p className="text-muted-foreground text-[10px] mb-1 line-clamp-1">
                   {artist.description}
                 </p>
-                <span className="text-gold text-xs font-medium">
-                  {artist.experience} de experiência
+                <span className="text-gold text-[10px] font-medium">
+                  {artist.experience}
                 </span>
               </div>
             </motion.div>

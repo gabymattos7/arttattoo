@@ -122,8 +122,8 @@ export const Portfolio = () => {
   const [activeStyle, setActiveStyle] = useState<TattooStyle>("Todos");
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
   const filteredItems = activeStyle === "Todos" ? portfolioItems : portfolioItems.filter(item => item.style === activeStyle);
-  return <section id="portfolio" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+  return <section id="portfolio" className="py-12 md:py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <motion.div initial={{
         opacity: 0,
@@ -135,7 +135,7 @@ export const Portfolio = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="text-center mb-12">
+      }} className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-12 h-[1px] bg-gold" />
             <span className="text-gold font-medium uppercase tracking-widest text-sm">
@@ -143,8 +143,8 @@ export const Portfolio = () => {
             </span>
             <div className="w-12 h-[1px] bg-gold" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">Nossas Artes</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">Nossas Artes</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
             Explore nossa galeria de tatuagens e encontre inspiração para sua próxima arte. 
             Cada peça é única e feita com dedicação.
           </p>
@@ -162,8 +162,8 @@ export const Portfolio = () => {
       }} transition={{
         duration: 0.6,
         delay: 0.2
-      }} className="flex flex-wrap justify-center gap-2 mb-10">
-          {styles.map(style => <button key={style} onClick={() => setActiveStyle(style)} className={`px-3 py-1.5 rounded-full font-medium text-xs transition-all duration-300 ${activeStyle === style ? "bg-gold text-background" : "bg-card text-foreground hover:bg-gold/20 border border-border"}`}>
+      }} className="flex flex-wrap justify-center gap-1.5 mb-6">
+          {styles.map(style => <button key={style} onClick={() => setActiveStyle(style)} className={`px-2.5 py-1 rounded-full font-medium text-[10px] transition-all duration-300 ${activeStyle === style ? "bg-gold text-background" : "bg-card text-foreground hover:bg-gold/20 border border-border"}`}>
               {style}
             </button>)}
         </motion.div>
@@ -181,7 +181,7 @@ export const Portfolio = () => {
           height: 0
         }} transition={{
           duration: 0.3
-        }} className="text-center mb-8">
+        }} className="text-center mb-5">
               <p className="text-gold/80 italic">
                 {styleDescriptions[activeStyle]}
               </p>
@@ -189,7 +189,7 @@ export const Portfolio = () => {
         </AnimatePresence>
 
         {/* Gallery Grid */}
-        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <motion.div layout className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => <motion.div key={item.id} layout initial={{
             opacity: 0,
@@ -203,14 +203,14 @@ export const Portfolio = () => {
           }} transition={{
             duration: 0.4,
             delay: index * 0.05
-          }} className="group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer" onClick={() => setSelectedImage(item)}>
+          }} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onClick={() => setSelectedImage(item)}>
                 <img src={item.image} alt={item.description} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-2 py-0.5 bg-gold text-background text-[10px] font-semibold rounded-full mb-1">
+                <div className="absolute bottom-0 left-0 right-0 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="inline-block px-1.5 py-0.5 bg-gold text-background text-[8px] font-semibold rounded-full mb-0.5">
                     {item.style}
                   </span>
-                  <p className="text-foreground font-medium text-xs">{item.description}</p>
+                  <p className="text-foreground font-medium text-[10px] line-clamp-1">{item.description}</p>
                 </div>
               </motion.div>)}
           </AnimatePresence>
@@ -228,11 +228,11 @@ export const Portfolio = () => {
       }} transition={{
         duration: 0.6,
         delay: 0.4
-      }} className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
+      }} className="text-center mt-10">
+          <p className="text-muted-foreground mb-4 text-sm">
             Gostou do que viu? Agende uma consulta e traga suas ideias!
           </p>
-          <a href="#contato" className="inline-flex items-center gap-2 bg-gold text-background px-8 py-4 rounded-full font-semibold hover:bg-gold-hover transition-colors">
+          <a href="#contato" className="inline-flex items-center gap-2 bg-gold text-background px-6 py-3 rounded-full font-semibold text-sm hover:bg-gold-hover transition-colors">
             Agendar Consulta
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
