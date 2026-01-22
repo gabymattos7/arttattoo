@@ -2,27 +2,40 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Pen, Award, Users, Calendar, CheckCircle } from "lucide-react";
-
-const stats = [
-  { value: "500+", label: "Clientes Satisfeitos", icon: Users },
-  { value: "10+", label: "Anos de Experiência", icon: Calendar },
-  { value: "15+", label: "Prêmios Conquistados", icon: Award },
-  { value: "100%", label: "Satisfação Garantida", icon: CheckCircle },
-];
-
+const stats = [{
+  value: "500+",
+  label: "Clientes Satisfeitos",
+  icon: Users
+}, {
+  value: "10+",
+  label: "Anos de Experiência",
+  icon: Calendar
+}, {
+  value: "15+",
+  label: "Prêmios Conquistados",
+  icon: Award
+}, {
+  value: "100%",
+  label: "Satisfação Garantida",
+  icon: CheckCircle
+}];
 export const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <section id="sobre" className="py-24 md:py-32 bg-background" ref={ref}>
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px"
+  });
+  return <section id="sobre" className="py-24 md:py-32 bg-background" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {}} transition={{
+        duration: 0.6
+      }} className="text-center mb-16 rounded-none shadow-none opacity-100 border-0 border-dotted my-0 py-0 pb-px">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Pen className="w-5 h-5 text-gold" />
             <span className="text-gold font-medium uppercase tracking-wide text-sm">
@@ -34,7 +47,7 @@ export const About = () => {
             Arte que Conta Histórias
           </h2>
 
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto mb-4">
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto pt-px pb-px pr-px pl-px mb-0">
             No Art TATTO, transformamos ideias em arte permanente. Com mais de 10 anos 
             de experiência, nosso estúdio é referência em tatuagens de alta qualidade, 
             combinando técnica impecável com criatividade sem limites.
@@ -47,14 +60,16 @@ export const About = () => {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="bg-card p-6 md:p-8 rounded-2xl border border-border/50 text-center"
-            >
+          {stats.map((stat, index) => <motion.div key={stat.label} initial={{
+          opacity: 0,
+          y: 20
+        }} animate={isInView ? {
+          opacity: 1,
+          y: 0
+        } : {}} transition={{
+          duration: 0.6,
+          delay: 0.2 + index * 0.1
+        }} className="bg-card p-6 md:p-8 rounded-2xl border border-border/50 text-center">
               <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="w-6 h-6 text-gold" />
               </div>
@@ -62,10 +77,8 @@ export const About = () => {
                 {stat.value}
               </div>
               <div className="text-muted-foreground text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
+            </motion.div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
