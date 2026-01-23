@@ -48,7 +48,7 @@ export const About = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto pt-px pb-px pr-px pl-px mb-0">
-            No Art TATTO, transformamos ideias em arte permanente. Com mais de 10 anos 
+            No Art Tattoo, transformamos ideias em arte permanente. Com mais de 10 anos 
             de experiência, nosso estúdio é referência em tatuagens de alta qualidade, 
             combinando técnica impecável com criatividade sem limites.
           </p>

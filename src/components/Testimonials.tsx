@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Marina Santos",
     role: "Cliente desde 2020",
-    content: "Minha experiência no Art TATTO foi incrível! O artista entendeu exatamente o que eu queria e superou minhas expectativas. Recomendo a todos!",
+    content: "Minha experiência no Art Tattoo foi incrível! O artista entendeu exatamente o que eu queria e superou minhas expectativas. Recomendo a todos!",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
@@ -56,7 +56,7 @@ const testimonials = [
   {
     name: "Lucas Almeida",
     role: "Cliente desde 2019",
-    content: "Já fiz 5 tatuagens no Art TATTO e todas ficaram incríveis. A atenção aos detalhes e o cuidado com o cliente são incomparáveis.",
+    content: "Já fiz 5 tatuagens no Art Tattoo e todas ficaram incríveis. A atenção aos detalhes e o cuidado com o cliente são incomparáveis.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
   },

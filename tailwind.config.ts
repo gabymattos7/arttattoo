@@ -16,7 +16,7 @@ export default {
       fontFamily: {
         display: ['Playfair Display', 'serif'],
         body: ['Inter', 'sans-serif'],
-        western: ['Rye', 'serif'],
+        logo: ['Bebas Neue', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

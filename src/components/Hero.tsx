@@ -20,7 +20,7 @@ export const Hero = () => {
         duration: 0.8,
         delay: 0.2
       }} className="max-w-3xl">
-          <h1 className="text-6xl md:text-8xl font-western text-foreground mb-4 tracking-wide text-shadow-hero text-left">
+          <h1 className="text-6xl md:text-8xl font-logo text-foreground mb-4 tracking-widest text-shadow-hero text-left uppercase">
             Art <span className="text-gold">Tattoo</span>
           </h1>
           
