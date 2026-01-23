@@ -4,8 +4,8 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-display font-black text-foreground mb-4">
-              Art <span className="text-gold">TATTO</span>
+            <h3 className="text-2xl font-logo tracking-widest text-foreground mb-4 uppercase">
+              Art <span className="text-gold">Tattoo</span>
             </h3>
             <p className="text-muted-foreground max-w-md mb-6">
               Transformando ideias em arte permanente desde 2015. 
@@ -48,7 +48,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">© 2015 Art TATTO. Todos os direitos reservados.</p>
+          <p className="text-muted-foreground text-sm">© 2015 Art Tattoo. Todos os direitos reservados.</p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
               Política de Privacidade

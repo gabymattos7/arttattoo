@@ -69,11 +69,11 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           <motion.a 
             href="/" 
-            className="text-2xl font-display font-black tracking-tight text-foreground"
+            className="text-2xl font-logo tracking-widest text-foreground uppercase"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            Art <span className="text-gold">TATTO</span>
+            Art <span className="text-gold">Tattoo</span>
           </motion.a>
 
           <div className="hidden md:flex items-center space-x-8">

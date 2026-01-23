@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -45,7 +45,7 @@
     /* Font families */
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-    --font-western: 'Rye', serif;
+    --font-logo: 'Bebas Neue', sans-serif;
   }
 
   .dark {
@@ -94,8 +94,8 @@
     font-family: var(--font-body);
   }
 
-  .font-western {
-    font-family: var(--font-western);
+  .font-logo {
+    font-family: var(--font-logo);
   }
 
   .text-gold {
