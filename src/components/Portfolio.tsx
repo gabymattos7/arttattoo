@@ -11,6 +11,16 @@ import tattoo7 from "@/assets/portfolio/tattoo-7.jpg";
 import tattoo8 from "@/assets/portfolio/tattoo-8.jpg";
 import tattoo9 from "@/assets/portfolio/tattoo-9.jpg";
 import tattoo10 from "@/assets/portfolio/tattoo-10.jpg";
+import tattoo11 from "@/assets/portfolio/tattoo-11.jpg";
+import tattoo12 from "@/assets/portfolio/tattoo-12.jpg";
+import tattoo13 from "@/assets/portfolio/tattoo-13.jpg";
+import tattoo14 from "@/assets/portfolio/tattoo-14.jpg";
+import tattoo15 from "@/assets/portfolio/tattoo-15.jpg";
+import tattoo16 from "@/assets/portfolio/tattoo-16.jpg";
+import tattoo17 from "@/assets/portfolio/tattoo-17.jpg";
+import tattoo18 from "@/assets/portfolio/tattoo-18.jpg";
+import tattoo19 from "@/assets/portfolio/tattoo-19.jpg";
+import tattoo20 from "@/assets/portfolio/tattoo-20.jpg";
 
 interface PortfolioItem {
   id: number;
@@ -29,6 +39,16 @@ const portfolioItems: PortfolioItem[] = [
   { id: 8, image: tattoo8, description: "Onça pintada em fechamento" },
   { id: 9, image: tattoo9, description: "Zeus e demônios" },
   { id: 10, image: tattoo10, description: "Arcanjo Miguel" },
+  { id: 11, image: tattoo11, description: "Lobo com navio e samurai" },
+  { id: 12, image: tattoo12, description: "Hannya com cobra e flores" },
+  { id: 13, image: tattoo13, description: "Deusa com águia" },
+  { id: 14, image: tattoo14, description: "Zeus com relógio" },
+  { id: 15, image: tattoo15, description: "Bússola com âncora e mapa" },
+  { id: 16, image: tattoo16, description: "Leão realista" },
+  { id: 17, image: tattoo17, description: "Poseidon com tentáculos" },
+  { id: 18, image: tattoo18, description: "Lobo com cordeiro" },
+  { id: 19, image: tattoo19, description: "Lobo com lua e cachorro" },
+  { id: 20, image: tattoo20, description: "São Miguel Arcanjo" },
 ];
 
 export const Portfolio = () => {
