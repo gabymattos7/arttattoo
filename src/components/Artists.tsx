@@ -120,7 +120,7 @@ export const Artists = () => {
                 <img
                   src={artist.image}
                   alt={artist.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 grayscale"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
                 <div className="absolute bottom-1 left-1 right-1">
