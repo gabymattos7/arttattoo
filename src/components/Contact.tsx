@@ -60,7 +60,7 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open("https://w.app/arttattooreal", "_blank", "noopener,noreferrer");
+    window.open("https://wa.me/5517982061892", "_blank", "noopener,noreferrer");
   };
 
   return (
